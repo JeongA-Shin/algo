@@ -27,6 +27,46 @@ dp가 완전 탐색이랑 자주 엮이기 때문에, dp와 그리디를 "정반
 
 */
 
+
+
+/*
+* 이 문제에서는 탐욕적으로 제일 큰 값이 되는 것부터 채우고, 그 다음에 작은 애들을 채워줌
+* -> 전체 경우에서 생각하지 않고 일단 큰 거부터 채워버림
+*/
+
+int arr[11];
+
 int main() {
+
+	int n, k;
+	cin >> n >> k; //동전의 총 종류, 만들고자 하는 가치의 합
+
+	int cnt = 0; //전체 답
+
+	for (int i = 0; i < n; i++) {
+		int coin;
+		cin >> coin; //문제 조건에서 오름차순으로 주어진다고 함
+		arr[i] = coin;
+	}
+
+	for (int i = n-1; i >= 0; i--) { //제일 큰 수부터 
+		//cout << "arr[i]: " << arr[i] << endl;
+
+		if (arr[i] > k) {
+			continue; //만약 입력된 값이 더 크면 바로 패스
+		}
+
+		int curr = k / arr[i];//해당 동전이 몇 개가 필요한지
+		//cout << " k / arr[i]: " << k / arr[i] << endl;
+
+		cnt += curr; // 전체 개수에 더해주기
+		//cout << "updated cnt: " << cnt << endl;
+
+		k -= arr[i] * curr; //남은 값으로 업데이트
+		//cout << "updated value: " << k << endl;
+		
+	}
+
+	cout << cnt << endl;
 
 }
