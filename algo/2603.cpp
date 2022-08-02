@@ -5,6 +5,7 @@ using namespace std;
 // 이 풀이가 훨씬 덜 헷갈림
 // 각 사분면의 첫 칸을 기준으로 사분면 탐색
 
+/*
 int n;
 int paper[128][128];
 int blue, white;
@@ -62,10 +63,10 @@ int main()
 	cout << blue << '\n';
 	return 0;
 }
+*/
 
 
 
-/*
 int arr[128][128];
 
 //흰색은 0, 파란색은 1
@@ -92,13 +93,6 @@ bool is_square(int, int, int, int);
 int cnt = 0;
 
 void get_cnt(int row_start, int row_end, int col_start, int col_end) {
-
-	cout << "row_start: " << row_start << " row_end: " << row_end << endl;
-	cout << "col_start: " << col_start << " col_end: " << col_end << endl;
-	cout << "is_square " << is_square(row_start, row_end, col_start, col_end) << endl;
-	cout << endl;
-	
-
 
 	if (is_square(row_start, row_end, col_start,col_end)) { //하나의 색으로 이루어진 정사각형이면
 		if (arr[row_start][col_start] == 0) white++;
@@ -149,7 +143,7 @@ int main() {
 		}
 	}
 
-	get_cnt(0, 8, 0, 8);
+	get_cnt(0, n, 0, n);
 	
 
 	cout << white << endl;
@@ -157,4 +151,4 @@ int main() {
 
 }
 
-*/
+
