@@ -44,7 +44,8 @@ void dfs(int idx, int cnt) { //idx는 검색 시작 노드의 인덱스, cnt는 
     }
 
 
-    //이번에 탐색하는 시작노드 - 즉 dfs를 for문으로 구현 한 것
+
+    //시작노드를 바꾸어주는 것. 현재 루트노드는 (3,5) 인데 루트 노드 없이 (0,6)만 포함하는 경우도 있으므로
     for (int i = idx; i < bracket.size(); i++) {
         //이번 괄호쌍을 아직 방문했다면 패스
         if (isVisited[i]) {
