@@ -45,7 +45,7 @@ void dfs(int idx, int cnt) { //idx는 검색 시작 노드의 인덱스, cnt는 
 
 
 
-    //시작노드를 바꾸어주는 것. 현재 루트노드는 (3,5) 인데 루트 노드 없이 (0,6)만 포함하는 경우도 있으므로
+    //백트래킹은 시작노드를 바꾸어주는 것. 현재 루트노드는 (3,5) 인데 루트 노드 없이 (0,6)만 포함하는 경우도 있으므로
     //보통 시작 노드는 무조건 포함인데 문제 조건상 시작 노드만 빠져야할 수도 있으니까
     //즉 i는 dfs 시작노드
     for (int i = idx; i < bracket.size(); i++) {
@@ -68,7 +68,7 @@ void dfs(int idx, int cnt) { //idx는 검색 시작 노드의 인덱스, cnt는 
         cout << "----this dsf comeback: "<<idx<<" "<<cnt<<"----" << endl;
 
 
-        //이제 새로운 시작노드에서 다시 dfs 시작 대비
+        //이제 새로운 시작노드에서 다시 dfs 시작 대비 == 백트래킹
         cout << "now make unvisited this pair:" << i << endl;
         isVisited[i] = false; 
         cout << "now make unvisited this index for braceket :" << bracket[i].first << " , " << bracket[i].second << endl;
