@@ -1,14 +1,12 @@
-﻿#include <iostream>
+﻿/*
+* 시간 초과 뜸
+* 
+#include <iostream>
 #include <algorithm>
 #define fastio() ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
 using namespace std;
 
 pair<pair<long long, long long>,bool> arr[100001]; // 시작 시간, 끝나는 시간, 삭제 여부
-
-bool cmp(pair<pair<int, int>,int>& p1, pair<pair<int, int>,int>& p2) {
-    if (p1.first.first == p2.first.first) return p1.first.second < p2.first.second;
-    return p1.first.first < p2.first.first;
-}
 
 int main() {
     fastio();
@@ -18,14 +16,12 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         cin >> arr[i].first.first >> arr[i].first.second;
-        arr[i].second = false;
+        arr[i].second = false; 
     }
 
     sort(arr, arr + n);
 
     int cnt = 0;
-
-    
 
     //그리디답게 하나씩 생각해봄
     //일단 첫번째는 무조건 하나 할당
@@ -48,5 +44,7 @@ int main() {
         }
     }
 
-    cout << cnt << endl;
+    cout << cnt << '\n';
 }
+
+*/
